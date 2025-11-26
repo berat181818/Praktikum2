@@ -149,8 +149,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -260,12 +260,33 @@
                   "new": false,
                   "number": 101,
                   "score": "28"
+                },
+                {
+                  "id": "e70b0965-8b9f-421d-9b31-ef6f0b8a2b21",
+                  "title": "Identitätsdiebstahl",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Beschreibung: Da die interne Kommunikation unverschlüsselt ist, kann ein Angreifer im Netzwerk den Datenverkehr abfangen (\"Man-in-the-Middle\"). Er liest den One-Time-Token (OTT) im Klartext mit und nutzt diesen, um sich beim Login-System als der legitime Benutzer auszugeben (Spoofing).\n\nCAPEC-ID: CAPEC-151 (Identity Spoofing)\n\nATT&CK-ID: T1557 (Adversary-in-the-Middle)\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 107,
+                  "score": ""
                 }
               ],
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isWebApplication": null,
               "handlesCardPayment": null,
-              "handlesGoodsOrServices": null
+              "handlesGoodsOrServices": null,
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -782,16 +803,6 @@
             "target": {
               "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
             },
-            "vertices": [
-              {
-                "x": 1030,
-                "y": -20
-              },
-              {
-                "x": 1055,
-                "y": -40
-              }
-            ],
             "tools": {
               "items": [
                 "boundary",
@@ -871,7 +882,17 @@
                 "target-arrowhead"
               ],
               "name": null
-            }
+            },
+            "vertices": [
+              {
+                "x": 1030,
+                "y": -20
+              },
+              {
+                "x": 1055,
+                "y": -40
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1461,6 +1482,10 @@
               },
               {
                 "x": 1240,
+                "y": 250
+              },
+              {
+                "x": 1180,
                 "y": 250
               },
               {
@@ -2251,7 +2276,13 @@
             "target": {
               "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
               "port": "5c682738-7f27-4314-9b68-8be2bbe762c6"
-            }
+            },
+            "vertices": [
+              {
+                "x": 460,
+                "y": 50
+              }
+            ]
           }
         ],
         "version": "2.5.0",
@@ -2263,7 +2294,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 106
+    "threatTop": 107
   },
   "version": "2.5.0"
 }

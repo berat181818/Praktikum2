@@ -137,8 +137,8 @@
           },
           {
             "position": {
-              "x": 280,
-              "y": -6.999999999999922
+              "x": 249.9999999999999,
+              "y": -52
             },
             "size": {
               "width": 130,
@@ -263,13 +263,15 @@
                 }
               ],
               "hasOpenThreats": false,
-              "isWebApplication": null
+              "isWebApplication": null,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null
             }
           },
           {
             "position": {
-              "x": 488,
-              "y": -11.999999999999922
+              "x": 495,
+              "y": -21.999999999999922
             },
             "size": {
               "width": 130,
@@ -548,7 +550,8 @@
                 "informationDisclosure": 1,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
-              }
+              },
+              "isWebApplication": null
             }
           },
           {
@@ -747,113 +750,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Erwarteter OTT",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "1. Auth Challenge"
-                  }
-                },
-                "position": 0.5
-              }
-            ],
-            "id": "2503a360-01b6-4464-b35f-42c6fb583348",
-            "source": {
-              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
-            },
-            "target": {
-              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
-            },
-            "vertices": [
-              {
-                "x": 440,
-                "y": -10
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "2. Weiterleitung\nTelefonnummer",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Erwarteter OTT"
-                  }
-                },
-                "position": 0.5
-              }
-            ],
-            "id": "63356151-e316-4a82-8224-9a7c729cfbee",
-            "source": {
-              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
-            },
-            "target": {
-              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "2b. Telefonanbieter",
               "description": "",
               "outOfScope": false,
@@ -888,10 +784,94 @@
             },
             "vertices": [
               {
+                "x": 1030,
+                "y": -20
+              },
+              {
                 "x": 1055,
                 "y": -40
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "flow",
@@ -1103,6 +1083,10 @@
               {
                 "x": 1100,
                 "y": -91
+              },
+              {
+                "x": 1060,
+                "y": -140
               }
             ]
           },
@@ -1384,7 +1368,21 @@
             "target": {
               "cell": "54893037-6b22-4db0-a89e-e87de40a10aa",
               "port": "7c7885d6-de57-47e0-b48e-96b353fab3a7"
-            }
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": 140
+              },
+              {
+                "x": 410,
+                "y": 160
+              },
+              {
+                "x": 380,
+                "y": 180
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1523,6 +1521,62 @@
               {
                 "x": 560,
                 "y": 190
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "1. Auth Challenge",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "1. Auth Challenge"
+            ],
+            "id": "9865ed2b-1663-44f0-9760-130a547f3fe3",
+            "source": {
+              "x": 334,
+              "y": -52
+            },
+            "target": {
+              "x": 510,
+              "y": 0
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": -30
               }
             ]
           },
@@ -1667,7 +1721,8 @@
                 "repudiation": 1,
                 "informationDisclosure": 0,
                 "denialOfService": 0
-              }
+              },
+              "storesInventory": null
             }
           },
           {
@@ -2151,15 +2206,51 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
             },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
+            "width": 200,
+            "height": 100,
+            "zIndex": 17,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Erwarteter OTT",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Erwarteter OTT"
+            ],
+            "id": "d6451838-62ad-4ee6-8e98-a24687ea9928",
+            "source": {
+              "x": 500,
+              "y": 50
+            },
+            "target": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
+              "port": "5c682738-7f27-4314-9b68-8be2bbe762c6"
             }
           }
         ],
@@ -2172,7 +2263,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 105
+    "threatTop": 106
   },
   "version": "2.5.0"
 }

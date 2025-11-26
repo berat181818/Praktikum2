@@ -280,8 +280,8 @@
                 "text": "2-Faktor-Authe\nntifizierungsdi\nenst"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -378,15 +378,37 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [],
-              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "60ecfb28-c636-4c0c-84b5-d5ff80d172cc",
+                  "title": "Dienstverweigerung",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Beschreibung: Ein Angreifer überflutet den 2-Faktor-Dienst mit einer massiven Anzahl an Anfragen (Flooding). Da der Dienst aus Kostengründen nicht redundant ausgelegt ist, werden die Ressourcen erschöpft, der Server stürzt ab, und legitime Nutzer können sich nicht mehr anmelden.\n\nCAPEC-ID: CAPEC-125 (Flooding)\n\nATT&CK-ID: T1498 (Network Denial of Service)\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 105,
+                  "score": ""
+                }
+              ],
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
-              "isWebApplication": null
+              "isWebApplication": null,
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -403,8 +425,8 @@
                 "text": "Telefonnummer-\nAPI-Gateway"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -501,8 +523,32 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [],
-              "hasOpenThreats": false
+              "threats": [
+                {
+                  "id": "76f6f1a0-a94c-44c5-aaa1-2139e27cf636",
+                  "title": "Informationspreisgabe",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Beschreibung: Ein Angreifer verschafft sich Zugriff auf das Dateisystem des Servers. Dort liest er den statischen symmetrischen Schlüssel aus, der im Klartext in einer ungeschützten Konfigurationsdatei gespeichert ist (\"Hardcoded Secret\"). Mit diesem Schlüssel kann er den gesamten verschlüsselten Verkehr entschlüsseln.\n\nCAPEC-ID: CAPEC-37 (Retrieve Embedded Sensitive Data)\n\nATT&CK-ID: T1552 (Unsecured Credentials)\n\n\nCAPEC-ID: CAPEC-93 (Log Injection-Tampering-Forging)\n\nATT&CK-ID: T1070 (Indicator Removal)\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 104,
+                  "score": ""
+                }
+              ],
+              "hasOpenThreats": true,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null,
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -1494,11 +1540,13 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1598,8 +1646,28 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "a30dab89-4a4b-4bc9-8cca-00d404082f90",
+                  "title": "Abstreitbarkeit",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Beschreibung: Ein Angreifer im internen Netz fängt den unverschlüsselten Datenverkehr zur Log-Datenbank ab. Er löscht gezielt Protokoll-Pakete (Logs) oder verändert deren Inhalt, bevor sie gespeichert werden. Dadurch werden Spuren von Angriffen verwischt, und Aktionen können nicht mehr zweifelsfrei nachgewiesen werden.\n\nCAPEC-ID: CAPEC-93 (Log Injection-Tampering-Forging)\n\nATT&CK-ID: T1070 (Indicator Removal)\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 103,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1711,7 +1779,7 @@
             },
             "id": "b1ef5a1b-e975-4fd3-8ba0-079c4b33533f",
             "data": {
-              "type": "tm.Flow",
+              "type": "tm.Store",
               "name": "Routing-\nInformation-DB",
               "description": "",
               "outOfScope": false,
@@ -1724,7 +1792,8 @@
               "threats": [],
               "isBidirectional": false,
               "protocol": "",
-              "isPublicNetwork": false
+              "isPublicNetwork": false,
+              "storesInventory": null
             }
           },
           {
@@ -1748,6 +1817,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1831,7 +1901,6 @@
               ]
             },
             "id": "54893037-6b22-4db0-a89e-e87de40a10aa",
-            "zIndex": 14,
             "data": {
               "type": "tm.Process",
               "name": "Allsecure Mobile \nPhone OTT \nService",
@@ -1868,6 +1937,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -1951,7 +2021,6 @@
               ]
             },
             "id": "cefe7f3e-5485-4f0c-a48a-8f3b42ccf7f6",
-            "zIndex": 15,
             "data": {
               "type": "tm.Process",
               "name": "SIEM-System",
@@ -1965,13 +2034,6 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1995,6 +2057,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -2078,7 +2141,6 @@
               ]
             },
             "id": "11320926-b985-4d64-a1f8-0991ae043410",
-            "zIndex": 16,
             "data": {
               "type": "tm.Actor",
               "name": "Management",
@@ -2089,6 +2151,15 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           }
         ],
@@ -2101,7 +2172,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 102
+    "threatTop": 105
   },
   "version": "2.5.0"
 }

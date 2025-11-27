@@ -573,15 +573,6 @@
                 "elevationOfPrivilege": 0
               },
               "isWebApplication": null
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1291,8 +1282,7 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1313,7 +1303,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
@@ -1322,19 +1312,19 @@
                 {
                   "id": "3bbb49c7-3544-41e6-a08d-5933d440deb2",
                   "title": "Rechteausweitung",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Tampering",
                   "description": "Beschreibung:\n\nEin Angreifer, der (z. B. durch kompromittiertes internes Gerät oder unsichere Netzsegmente) Zugriff auf das interne Netzwerk erlangt, kann OTT-Nachrichten auf dem Weg vom 2FA-Backend zum Allsecure Mobile Phone OTT-Service abfangen und manipulieren.\nEr könnte z. B. den OTP manipulieren oder durch einen eigenen Wert ersetzen und so Anmeldungen kapern.\n\nAngriffsvektor:\n\nMan-in-the-Middle im internen Netzwerk\n\nManipulation unzureichend authentifizierter API-Requests\n\nSchwache/fehlende TLS-Validierung\n\nKompromittierter interner Proxy\n\nCAPEC-ID:\n\n📌 CAPEC-94 – Man-in-the-Middle Attack\n\nMITRE ATT&CK Taktik:\n\n📌 TA0006 – Credential Access\n\nD: 10 / R: 8 / E: 7 / A: 10 / DREA: 35",
-                  "mitigation": "Firewall, Load-Balancer oder CDN einsetzen, um direkten Datenverkehr auf Login-Server zu begrenzen.\n\nDEFEND: D3-ITF - Inbound Traffic Filtering\nASVS: CWE 770 (8.1.4): Verify the application can detect and alert on abnormal numbers of requests, such as by IP, user, total per hour or day, or whatever makes sense for the application.\n\nD: 4 / R: 10 / E: 4 / A: 10 / Neuer DREA: 28",
+                  "mitigation": "mutual TLS einführen, damit sich beide Systeme gegenseitig mittels Zertifikate authentifizieren müssen (dabei mindestens TLS 1.2 verwenden).\n\nASVS: CWE 295 (9.2.1): Prüfen Sie, dass Verbindungen zum und vom Server vertrauenswürdige TLS-Zertifikate verwenden. Werden intern generierte oder selbstsignierte Zertifikate verwendet, muss der Server so konfiguriert werden, dass er nur bestimmten internen CAs vertraut. Alle anderen müssen abgelehnt werden.\n\nD: 5 / R: 4 / E: 4 / A: 4 / Neuer DREA: 17",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 109,
-                  "score": ""
+                  "score": "17"
                 }
               ],
               "threatFrequency": {
-                "tampering": 2,
+                "tampering": 3,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }

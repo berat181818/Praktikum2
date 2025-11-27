@@ -448,8 +448,8 @@
                 "text": "Telefonnummer-\nAPI-Gateway"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -550,25 +550,25 @@
                 {
                   "id": "76f6f1a0-a94c-44c5-aaa1-2139e27cf636",
                   "title": "Informationspreisgabe",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Beschreibung: Ein Angreifer verschafft sich Zugriff auf das Dateisystem des Servers. Dort liest er den statischen symmetrischen Schlüssel aus, der im Klartext in einer ungeschützten Konfigurationsdatei gespeichert ist (\"Hardcoded Secret\"). Mit diesem Schlüssel kann er den gesamten verschlüsselten Verkehr entschlüsseln.\n\nCAPEC-ID: CAPEC-37 (Retrieve Embedded Sensitive Data)\n\nATT&CK-ID: T1552 (Unsecured Credentials)\n\nD: 10 / R: 9 / E: 8 / A: 10 / DREA: 37",
-                  "mitigation": "Firewall, Load-Balancer oder CDN einsetzen, um direkten Datenverkehr auf Login-Server zu begrenzen.\n\nDEFEND: D3-ITF - Inbound Traffic Filtering\nASVS: CWE 770 (8.1.4): Verify the application can detect and alert on abnormal numbers of requests, such as by IP, user, total per hour or day, or whatever makes sense for the application.\n\nD: 4 / R: 10 / E: 4 / A: 10 / Neuer DREA: 28",
+                  "mitigation": "Secret-Security-Management einführen, um den Schutz der OTPs zu überprüfen\n\nASVS: CWE 320 (2.8.2): Prüfen Sie, dass die symmetrischen Schlüssel, die zur Prüfung der eingegebenen OTPs verwendet werden, sicher geschützt sind, z.B. durch Verwendung eines HSM oder der sicheren Schlüsselspeicherung des Betriebssystems.\n\nD: 5 / R: 5 / E: 4 / A: 5 / Neuer DREA: 19",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 104,
-                  "score": ""
+                  "score": "19"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 2,
+                "informationDisclosure": 3,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               },

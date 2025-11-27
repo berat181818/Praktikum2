@@ -149,8 +149,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -264,23 +264,23 @@
                 {
                   "id": "e70b0965-8b9f-421d-9b31-ef6f0b8a2b21",
                   "title": "Identitätsdiebstahl",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Beschreibung: Da die interne Kommunikation unverschlüsselt ist, kann ein Angreifer im Netzwerk den Datenverkehr abfangen (\"Man-in-the-Middle\"). Er liest den One-Time-Token (OTT) im Klartext mit und nutzt diesen, um sich beim Login-System als der legitime Benutzer auszugeben (Spoofing).\n\nCAPEC-ID: CAPEC-151 (Identity Spoofing)\n\nATT&CK-ID: T1557 (Adversary-in-the-Middle)\n\nD: 9 / R: 8 / E: 7 / A: 9 / DREA: 33",
-                  "mitigation": "Firewall, Load-Balancer oder CDN einsetzen, um direkten Datenverkehr auf Login-Server zu begrenzen.\n\nDEFEND: D3-ITF - Inbound Traffic Filtering\nASVS: CWE 770 (8.1.4): Verify the application can detect and alert on abnormal numbers of requests, such as by IP, user, total per hour or day, or whatever makes sense for the application.\n\nD: 4 / R: 10 / E: 4 / A: 10 / Neuer DREA: 28",
+                  "mitigation": "Transportverschlüsselung und Strict Certificate Validation um unsichere Protokolle zu deaktivieren und selbstsignierte Zertifikate abzulehnen.\n\nMASVS-Network-1: Die Absicherung der Datenübertragung erfordert zwingend Verschlüsselung und eine zuverlässige Authentifizierung des Kommunikationspartners, z. B. über TLS. Da Entwickler Sicherheitsmechanismen jedoch leicht umgehen oder falsch konfigurieren können, muss sichergestellt werden, dass die Anwendung immer ausschließlich sichere Verbindungen nutzt.\nD: 5 / R: 4 / E: 4 / A: 4 / Neuer DREA: 17",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
-                  "score": ""
+                  "score": "17"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isWebApplication": null,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "threatFrequency": {
-                "spoofing": 4,
+                "spoofing": 5,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -1574,13 +1574,11 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -1680,29 +1678,36 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "a30dab89-4a4b-4bc9-8cca-00d404082f90",
                   "title": "Abstreitbarkeit",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Repudiation",
                   "description": "Beschreibung: Ein Angreifer im internen Netz fängt den unverschlüsselten Datenverkehr zur Log-Datenbank ab. Er löscht gezielt Protokoll-Pakete (Logs) oder verändert deren Inhalt, bevor sie gespeichert werden. Dadurch werden Spuren von Angriffen verwischt, und Aktionen können nicht mehr zweifelsfrei nachgewiesen werden.\n\nCAPEC-ID: CAPEC-93 (Log Injection-Tampering-Forging)\n\nATT&CK-ID: T1070 (Indicator Removal)\n\nD: 10 / R: 8 / E: 8 / A: 10 / DREA: 36",
-                  "mitigation": "Firewall, Load-Balancer oder CDN einsetzen, um direkten Datenverkehr auf Login-Server zu begrenzen.\n\nDEFEND: D3-ITF - Inbound Traffic Filtering\nASVS: CWE 770 (8.1.4): Verify the application can detect and alert on abnormal numbers of requests, such as by IP, user, total per hour or day, or whatever makes sense for the application.\n\nD: 4 / R: 10 / E: 4 / A: 10 / Neuer DREA: 28",
+                  "mitigation": "sichere Transportverschlüsselung, damit Logs mit TLS 1.2 oder höher übertragen werden.\n\nASVS: CWE 319 (9.1.1): Prüfen Sie, dass der Client stets TLS-Verbindungen verwendet, das nicht auf unsichere oder unverschlüsselte Konfigurationen zurückfallen.\nASVS: CWE 326 (9.1.2): Prüfen Sie mit aktuellen TLS-Testtools, dass nur starke Algorithmen und Protokolle genutzt werden. Dabei sind die stärksten Algorithmen und neuesten Protokollversionen zu bevorzugen.\n\nD: 5 / R: 4 / E: 4 / A: 4 / Neuer DREA: 17",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 103,
-                  "score": ""
+                  "score": "17"
                 }
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "repudiation": 2,
+                "repudiation": 3,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               },
               "storesInventory": null
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {

@@ -409,7 +409,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Beschreibung: Ein Angreifer überflutet den 2-Faktor-Dienst mit einer massiven Anzahl an Anfragen (Flooding). Da der Dienst aus Kostengründen nicht redundant ausgelegt ist, werden die Ressourcen erschöpft, der Server stürzt ab, und legitime Nutzer können sich nicht mehr anmelden.\n\nCAPEC-ID: CAPEC-125 (Flooding)\n\nATT&CK-ID: T1498 (Network Denial of Service)\n\nD: 9 / R: 10 / E: 9 / A: 9 / DREA: 37",
-                  "mitigation": "Firewall, Load-Balancer oder CDN einsetzen, um direkten Datenverkehr auf Login-Server zu begrenzen.\n\nDEFEND: D3-ITF - Inbound Traffic Filtering: Filter auf Netzwerkebene, um unerwünschte oder auffällig häufige Verbindungen abzulehnen, z. B. durch IP‑Blocklisten, Geo‑Restriktionen oder andere Regeln, die verdächtige Quellen aussperren.\nD3-PMAD -  Protocol Metadata Anomaly Detection: Analyse des Netzwerkverkehrs auf Anomalien, z. B. ungewöhnlich hohe Request-Raten oder nicht‑normkonforme Paketsequenzen, um Flooding frühzeitig zu erkennen.\n\n\nD: 5 / R: 5 / E: 5 / A: 5 / Neuer DREA: 20",
+                  "mitigation": "Burst Handling und Adaptive Rate Limits, damit ungewöhnliche Anfragen eher nicht durchgehen\n\nDEFEND: D3-ITF - Inbound Traffic Filtering: Filter auf Netzwerkebene, um unerwünschte oder auffällig häufige Verbindungen abzulehnen, z. B. durch IP‑Blocklisten, Geo‑Restriktionen oder andere Regeln, die verdächtige Quellen aussperren.\nD3-PMAD -  Protocol Metadata Anomaly Detection: Analyse des Netzwerkverkehrs auf Anomalien, z. B. ungewöhnlich hohe Request-Raten oder nicht‑normkonforme Paketsequenzen, um Flooding frühzeitig zu erkennen.\n\n\nD: 5 / R: 5 / E: 5 / A: 5 / Neuer DREA: 20",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 105,
@@ -429,7 +429,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 7,
+                "denialOfService": 9,
                 "elevationOfPrivilege": 0
               }
             }
@@ -576,6 +576,8 @@
             },
             "tools": {
               "items": [
+                "boundary",
+                "button-remove",
                 "boundary",
                 "button-remove"
               ],

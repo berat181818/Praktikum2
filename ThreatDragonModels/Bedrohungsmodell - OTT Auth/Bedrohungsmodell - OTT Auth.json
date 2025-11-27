@@ -267,7 +267,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Spoofing",
-                  "description": "Beschreibung: Da die interne Kommunikation unverschlüsselt ist, kann ein Angreifer im Netzwerk den Datenverkehr abfangen (\"Man-in-the-Middle\"). Er liest den One-Time-Token (OTT) im Klartext mit und nutzt diesen, um sich beim Login-System als der legitime Benutzer auszugeben (Spoofing).\n\nCAPEC-ID: CAPEC-151 (Identity Spoofing)\n\nATT&CK-ID: T1557 (Adversary-in-the-Middle)\n",
+                  "description": "Beschreibung: Da die interne Kommunikation unverschlüsselt ist, kann ein Angreifer im Netzwerk den Datenverkehr abfangen (\"Man-in-the-Middle\"). Er liest den One-Time-Token (OTT) im Klartext mit und nutzt diesen, um sich beim Login-System als der legitime Benutzer auszugeben (Spoofing).\n\nCAPEC-ID: CAPEC-151 (Identity Spoofing)\n\nATT&CK-ID: T1557 (Adversary-in-the-Middle)\n\nD: 9 / R: 8 / E: 7 / A: 9 / DREA: 33",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -280,7 +280,7 @@
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 3,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -404,11 +404,11 @@
               "threats": [
                 {
                   "id": "60ecfb28-c636-4c0c-84b5-d5ff80d172cc",
-                  "title": "Dienstverweigerung",
+                  "title": "DDOS",
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Denial of service",
-                  "description": "Beschreibung: Ein Angreifer überflutet den 2-Faktor-Dienst mit einer massiven Anzahl an Anfragen (Flooding). Da der Dienst aus Kostengründen nicht redundant ausgelegt ist, werden die Ressourcen erschöpft, der Server stürzt ab, und legitime Nutzer können sich nicht mehr anmelden.\n\nCAPEC-ID: CAPEC-125 (Flooding)\n\nATT&CK-ID: T1498 (Network Denial of Service)\n",
+                  "description": "Beschreibung: Ein Angreifer überflutet den 2-Faktor-Dienst mit einer massiven Anzahl an Anfragen (Flooding). Da der Dienst aus Kostengründen nicht redundant ausgelegt ist, werden die Ressourcen erschöpft, der Server stürzt ab, und legitime Nutzer können sich nicht mehr anmelden.\n\nCAPEC-ID: CAPEC-125 (Flooding)\n\nATT&CK-ID: T1498 (Network Denial of Service)\n\nD: 9 / R: 10 / E: 9 / A: 9 / DREA: 37",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -429,7 +429,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 1,
+                "denialOfService": 5,
                 "elevationOfPrivilege": 0
               }
             }
@@ -553,7 +553,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Information disclosure",
-                  "description": "Beschreibung: Ein Angreifer verschafft sich Zugriff auf das Dateisystem des Servers. Dort liest er den statischen symmetrischen Schlüssel aus, der im Klartext in einer ungeschützten Konfigurationsdatei gespeichert ist (\"Hardcoded Secret\"). Mit diesem Schlüssel kann er den gesamten verschlüsselten Verkehr entschlüsseln.\n\nCAPEC-ID: CAPEC-37 (Retrieve Embedded Sensitive Data)\n\nATT&CK-ID: T1552 (Unsecured Credentials)\n\n\nCAPEC-ID: CAPEC-93 (Log Injection-Tampering-Forging)\n\nATT&CK-ID: T1070 (Indicator Removal)\n",
+                  "description": "Beschreibung: Ein Angreifer verschafft sich Zugriff auf das Dateisystem des Servers. Dort liest er den statischen symmetrischen Schlüssel aus, der im Klartext in einer ungeschützten Konfigurationsdatei gespeichert ist (\"Hardcoded Secret\"). Mit diesem Schlüssel kann er den gesamten verschlüsselten Verkehr entschlüsseln.\n\nCAPEC-ID: CAPEC-37 (Retrieve Embedded Sensitive Data)\n\nATT&CK-ID: T1552 (Unsecured Credentials)\n\nD: 10 / R: 9 / E: 8 / A: 10 / DREA: 37",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1089,6 +1089,10 @@
             },
             "vertices": [
               {
+                "x": 720,
+                "y": 13
+              },
+              {
                 "x": 760,
                 "y": -10
               }
@@ -1147,6 +1151,10 @@
               "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
             },
             "vertices": [
+              {
+                "x": 810,
+                "y": 48
+              },
               {
                 "x": 770,
                 "y": 65
@@ -1308,7 +1316,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Tampering",
-                  "description": "Beschreibung:\n\nEin Angreifer, der (z. B. durch kompromittiertes internes Gerät oder unsichere Netzsegmente) Zugriff auf das interne Netzwerk erlangt, kann OTT-Nachrichten auf dem Weg vom 2FA-Backend zum Allsecure Mobile Phone OTT-Service abfangen und manipulieren.\nEr könnte z. B. den OTP manipulieren oder durch einen eigenen Wert ersetzen und so Anmeldungen kapern.\n\nAngriffsvektor:\n\nMan-in-the-Middle im internen Netzwerk\n\nManipulation unzureichend authentifizierter API-Requests\n\nSchwache/fehlende TLS-Validierung\n\nKompromittierter interner Proxy\n\nCAPEC-ID:\n\n📌 CAPEC-94 – Man-in-the-Middle Attack\n\nMITRE ATT&CK Taktik:\n\n📌 TA0006 – Credential Access",
+                  "description": "Beschreibung:\n\nEin Angreifer, der (z. B. durch kompromittiertes internes Gerät oder unsichere Netzsegmente) Zugriff auf das interne Netzwerk erlangt, kann OTT-Nachrichten auf dem Weg vom 2FA-Backend zum Allsecure Mobile Phone OTT-Service abfangen und manipulieren.\nEr könnte z. B. den OTP manipulieren oder durch einen eigenen Wert ersetzen und so Anmeldungen kapern.\n\nAngriffsvektor:\n\nMan-in-the-Middle im internen Netzwerk\n\nManipulation unzureichend authentifizierter API-Requests\n\nSchwache/fehlende TLS-Validierung\n\nKompromittierter interner Proxy\n\nCAPEC-ID:\n\n📌 CAPEC-94 – Man-in-the-Middle Attack\n\nMITRE ATT&CK Taktik:\n\n📌 TA0006 – Credential Access\n\nD: 10 / R: 8 / E: 7 / A: 10 / DREA: 35",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1347,17 +1355,7 @@
                 "x": 380,
                 "y": 180
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "shape": "flow",
@@ -1687,7 +1685,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Repudiation",
-                  "description": "Beschreibung: Ein Angreifer im internen Netz fängt den unverschlüsselten Datenverkehr zur Log-Datenbank ab. Er löscht gezielt Protokoll-Pakete (Logs) oder verändert deren Inhalt, bevor sie gespeichert werden. Dadurch werden Spuren von Angriffen verwischt, und Aktionen können nicht mehr zweifelsfrei nachgewiesen werden.\n\nCAPEC-ID: CAPEC-93 (Log Injection-Tampering-Forging)\n\nATT&CK-ID: T1070 (Indicator Removal)\n",
+                  "description": "Beschreibung: Ein Angreifer im internen Netz fängt den unverschlüsselten Datenverkehr zur Log-Datenbank ab. Er löscht gezielt Protokoll-Pakete (Logs) oder verändert deren Inhalt, bevor sie gespeichert werden. Dadurch werden Spuren von Angriffen verwischt, und Aktionen können nicht mehr zweifelsfrei nachgewiesen werden.\n\nCAPEC-ID: CAPEC-93 (Log Injection-Tampering-Forging)\n\nATT&CK-ID: T1070 (Indicator Removal)\n\nD: 10 / R: 8 / E: 8 / A: 10 / DREA: 36",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -2074,8 +2072,8 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Elevation of privilege",
-                  "description": "Beschreibung:\n\nDas SIEM-System sammelt Logs und Events aus dem 2FA-Service und dem OTT-Service und verfügt damit über hohe Rechte.\nEin Angreifer könnte durch Ausnutzen einer Schwachstelle im SIEM (z. B. fehlerhafte Rollenverwaltung, unsichere Plugins oder Remote Code Execution in der Log-Parsing-Engine) höhere Rechte erlangen und damit:\n\nAdmin-Zugriff auf angeschlossene Systeme erhalten\n\nLogs manipulieren (Spuren verwischen)\n\n2FA-/OTT-Konfiguration ändern\n\nweitere Systeme im Trust-Zone kompromittieren\n\nAngriffsvektor:\n\nInjection in Log-Einträgen („Log Injection“)\n\nExploit in der SIEM-Parsing-Engine\n\nSchwache Privilegentrennung im SIEM\n\nRemote Code Execution durch manipulierte Device-Logs\n\nCAPEC-ID:\n\n📌 CAPEC-233 – Privilege Escalation\n\nMITRE ATT&CK Taktik:\n\n📌 TA0004 – Privilege Escalation",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Beschreibung:\n\nDas SIEM-System sammelt Logs und Events aus dem 2FA-Service und dem OTT-Service und verfügt damit über hohe Rechte.\nEin Angreifer könnte durch Ausnutzen einer Schwachstelle im SIEM (z. B. fehlerhafte Rollenverwaltung, unsichere Plugins oder Remote Code Execution in der Log-Parsing-Engine) höhere Rechte erlangen und damit:\n\nAdmin-Zugriff auf angeschlossene Systeme erhalten\n\nLogs manipulieren (Spuren verwischen)\n\n2FA-/OTT-Konfiguration ändern\n\nweitere Systeme im Trust-Zone kompromittieren\n\nAngriffsvektor:\n\nInjection in Log-Einträgen („Log Injection“)\n\nExploit in der SIEM-Parsing-Engine\n\nSchwache Privilegentrennung im SIEM\n\nRemote Code Execution durch manipulierte Device-Logs\n\nCAPEC-ID: CAPEC-233 – Privilege Escalation\nMITRE ATT&CK Taktik: A0004 – Privilege Escalation\n\nD: 10 / R: 7 / E: 7 / A: 10 / DREA: 34",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 108,

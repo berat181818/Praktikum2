@@ -1274,7 +1274,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1295,12 +1296,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "3bbb49c7-3544-41e6-a08d-5933d440deb2",
+                  "title": "Rechteausweitung",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Beschreibung:\n\nEin Angreifer, der (z. B. durch kompromittiertes internes Gerät oder unsichere Netzsegmente) Zugriff auf das interne Netzwerk erlangt, kann OTT-Nachrichten auf dem Weg vom 2FA-Backend zum Allsecure Mobile Phone OTT-Service abfangen und manipulieren.\nEr könnte z. B. den OTP manipulieren oder durch einen eigenen Wert ersetzen und so Anmeldungen kapern.\n\nAngriffsvektor:\n\nMan-in-the-Middle im internen Netzwerk\n\nManipulation unzureichend authentifizierter API-Requests\n\nSchwache/fehlende TLS-Validierung\n\nKompromittierter interner Proxy\n\nCAPEC-ID:\n\n📌 CAPEC-94 – Man-in-the-Middle Attack\n\nMITRE ATT&CK Taktik:\n\n📌 TA0006 – Credential Access",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 109,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Telefonnummer, OOT"
@@ -1327,7 +1347,17 @@
                 "x": 380,
                 "y": 180
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "flow",
@@ -1798,13 +1828,6 @@
               "protocol": "",
               "isPublicNetwork": false,
               "storesInventory": null
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1941,8 +1964,8 @@
                 "text": "SIEM-System"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2039,12 +2062,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "86bc55e1-dfcb-49c2-bfcf-c213f5200637",
+                  "title": "Rechteausweitung",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Beschreibung:\n\nDas SIEM-System sammelt Logs und Events aus dem 2FA-Service und dem OTT-Service und verfügt damit über hohe Rechte.\nEin Angreifer könnte durch Ausnutzen einer Schwachstelle im SIEM (z. B. fehlerhafte Rollenverwaltung, unsichere Plugins oder Remote Code Execution in der Log-Parsing-Engine) höhere Rechte erlangen und damit:\n\nAdmin-Zugriff auf angeschlossene Systeme erhalten\n\nLogs manipulieren (Spuren verwischen)\n\n2FA-/OTT-Konfiguration ändern\n\nweitere Systeme im Trust-Zone kompromittieren\n\nAngriffsvektor:\n\nInjection in Log-Einträgen („Log Injection“)\n\nExploit in der SIEM-Parsing-Engine\n\nSchwache Privilegentrennung im SIEM\n\nRemote Code Execution durch manipulierte Device-Logs\n\nCAPEC-ID:\n\n📌 CAPEC-233 – Privilege Escalation\n\nMITRE ATT&CK Taktik:\n\n📌 TA0004 – Privilege Escalation",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 108,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -2225,7 +2270,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 107
+    "threatTop": 109
   },
   "version": "2.5.0"
 }

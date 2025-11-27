@@ -1701,13 +1701,6 @@
                 "denialOfService": 0
               },
               "storesInventory": null
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {

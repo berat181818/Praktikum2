@@ -267,12 +267,12 @@
                   "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "Da die interne Kommunikation unverschlüsselt ist, kann ein \"Man-in-the-Middle\" im Netzwerk den Datenverkehr abfangen. Er stehlt die OTT, um sich beim Login-System als der legitime Benutzer auszugeben.\n\nCAPEC-ID: CAPEC-151 (Identity Spoofing)\n\nATT&CK-ID: T1557 (Adversary-in-the-Middle)\n\nD: 9 / R: 8 / E: 7 / A: 9 / DREA: 33",
-                  "mitigation": "Einsatz von TLS-Verschlüsselung und Strict Certificate Validation.\n\nMASVS-Network-1: Die Absicherung der Datenübertragung erfordert zwingend Verschlüsselung und eine zuverlässige Authentifizierung des Kommunikationspartners, z. B. über TLS. Da Entwickler Sicherheitsmechanismen jedoch leicht umgehen oder falsch konfigurieren können, muss sichergestellt werden, dass die Anwendung immer ausschließlich sichere Verbindungen nutzt.\n\nUmsetzung: Nur HTTPS, Nur starke Algorithmen (AES-GCM, ChaCha20-Poly1305),Zertifikatsprüfung mit CA\n\nD: 5 / R: 4 / E: 4 / A: 4 / Neuer DREA: 17",
+                  "description": "Da die interne Kommunikation unverschlüsselt ist, kann ein \"Man-in-the-Middle\" im Netzwerk den Datenverkehr abfangen. Er stehlt die OTT, um sich beim Login-System als der legitime Benutzer auszugeben.\n\nCAPEC-ID: CAPEC-151 (Identity Spoofing)\n\nATT&CK-ID: T1557 (Adversary-in-the-Middle)\n\nD: 8 / R: 7 / E: 6 / A: 10 / DREA: 31",
+                  "mitigation": "Einsatz von TLS-Verschlüsselung und Strict Certificate Validation.\n\nMASVS-Network-1: Die Absicherung der Datenübertragung erfordert zwingend Verschlüsselung und eine zuverlässige Authentifizierung des Kommunikationspartners, z. B. über TLS. Da Entwickler Sicherheitsmechanismen jedoch leicht umgehen oder falsch konfigurieren können, muss sichergestellt werden, dass die Anwendung immer ausschließlich sichere Verbindungen nutzt.\n\nUmsetzung: Nur HTTPS, Nur starke Algorithmen (AES-GCM, ChaCha20-Poly1305),Zertifikatsprüfung mit CA\n\nD: 8 / R: 3 / E: 3 / A: 10 / Neuer DREA: 24",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
-                  "score": "17"
+                  "score": "24"
                 }
               ],
               "hasOpenThreats": false,
@@ -280,7 +280,7 @@
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "threatFrequency": {
-                "spoofing": 12,
+                "spoofing": 14,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -573,6 +573,13 @@
                 "elevationOfPrivilege": 0
               },
               "isWebApplication": null
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1602,21 +1609,6 @@
             "target": {
               "cell": "54893037-6b22-4db0-a89e-e87de40a10aa",
               "port": "7c7885d6-de57-47e0-b48e-96b353fab3a7"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
             },
             "vertices": [
               {
